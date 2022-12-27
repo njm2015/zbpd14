@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $(xrandr --listmonitors | wc -l) -eq 3 ]
+then
+    $(/home/nathaniel/tools/zbpd14/sppb.sh 00 > /dev/null)
+    $(autorandr --change single)
+    $(echo 0 > /home/nathaniel/tools/zbpd14/dual)
+else
+    $(/home/nathaniel/tools/zbpd14/sppb.sh 44 > /dev/null)
+    $(autorandr --change dual)
+    $(echo 1 > /home/nathaniel/tools/zbpd14/dual)
+fi

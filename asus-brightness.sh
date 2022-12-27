@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# sudo ln -s /path/to/file /etc/acpi/asus-brightness.sh
+
 BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
 BRIGHTNESS=$(echo "$BRIGHTNESS * 0.64" | bc)
 BRIGHTNESS=$(echo "${BRIGHTNESS%.*}")
